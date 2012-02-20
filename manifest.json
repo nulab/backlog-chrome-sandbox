@@ -1,0 +1,16 @@
+{
+  "name": "Backlog Chrome Simple",
+  "version": "0.0.1",
+  "permissions": [
+    "notifications",
+    "tabs",
+    "http://*/*",
+    "https://*/*"       
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://nulab.backlog.jp/view/*"],
+      "js": ["common-libs.js","view_issue.js"]
+    }
+  ]
+}
