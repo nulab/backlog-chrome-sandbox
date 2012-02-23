@@ -23,6 +23,11 @@ $(function(){
      return buf.join("/");
    }
 
+   var form = $("<form action='" + url +"' method='post'></form>").hide();
+   var pname = $("<input type='hidden' name='page.name'></intput>").appendTo(form);
+   var pcontent = $("<input type='hidden' name='page.content'></intput>").appendTo(form);
+   form.appendTo(nuwiki);
+
    var a = $("<a>Add to Backlog Wiki</a>").appendTo(nuwiki).click(function(){
      var buf = [];
      container.children("div").each(function(){
@@ -35,8 +40,11 @@ $(function(){
        "page.content" : buf.join("\n"),
        "page.name" : "[議事録]ミーティング(" + getDateStr(new Date()) + ") - 開発|全体"
      }
-     var p = _(params).chain().map(function(v,k){return k + "=" + encodeURIComponent(v)}).reduce(function(n,m){return m + "&" + n}).value();
-     window.open(url + "&" + p);
+     pname.val(params["page.name"]);
+     pcontent.val(params["page.content"]);
+     form.submit();
+//     var p = _(params).chain().map(function(v,k){return k + "=" + encodeURIComponent(v)}).reduce(function(n,m){return m + "&" + n}).value();
+//     window.open(url + "&" + p);
    }).css({
      "display" : "block",
      "width": "100%",
