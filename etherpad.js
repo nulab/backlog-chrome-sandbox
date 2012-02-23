@@ -23,7 +23,7 @@ $(function(){
      return buf.join("/");
    }
 
-   var form = $("<form action='" + url +"' method='post'></form>").hide();
+   var form = $("<form action='" + url +"' method='post' target='_blank'></form>").hide();
    var pname = $("<input type='hidden' name='page.name'></intput>").appendTo(form);
    var pcontent = $("<input type='hidden' name='page.content'></intput>").appendTo(form);
    form.appendTo(nuwiki);
