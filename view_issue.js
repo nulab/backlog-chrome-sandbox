@@ -30,3 +30,30 @@ $(function(){
   asclip.hide();
 
 });
+
+// BLG-3415 課題の詳細画面の、課題の詳細部分（カードのとこ）にファイルをドラッグしたら、自動的にファイル添付のパネルが開いてほしい
+$(function(){
+  var smoothToggle = function(target,callback){
+    var j$body = $("body");
+    var top = $(target).offset().top - 20;
+    if(Math.abs(j$body.scrollTop() - top) <= 5 ){
+      callback();
+    }else{
+      j$body.animate({scrollTop:top},400,"swing",callback);
+    }
+  }
+
+  var entered = false, j$area = $("#add-multifile-area");
+  $("div#issuecard").bind("dragenter dragover",function(){
+    if ( ! entered  && ! j$area.is(":visible")){
+      entered = true;
+      smoothToggle("#attachmentPopupDialogButton",function(){
+        j$area.show();
+      });
+    }
+    return false;
+  }).bind("dragleave",function(){
+    entered = false;
+  });
+
+});
