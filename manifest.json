@@ -15,6 +15,10 @@
     {
       "matches": ["https://pad.nulab.co.jp/*"],
       "js": ["common-libs.js","etherpad.js"]
+    },
+    {
+      "matches": ["https://backlogapp.uservoice.com/admin/forums/*"],
+      "js": ["common-libs.js","uservoice.js"]
     }
   ]
 }
