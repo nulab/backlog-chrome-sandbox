@@ -23,11 +23,11 @@ $(function(){
       .append("<embed src='" + swf + "' width='20' height='20' name='asclip' quality='high' allowScriptAccess='always' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' flashvars='" + flashvars + "' />");
 
   $("#issuecard .key").append(asclip).hover(function(evt){
-      asclip.toggle(evt.type == "mouseenter");
+//      asclip.toggle(evt.type == "mouseenter");
   }).css({
       height : "20px"
   });
-  asclip.hide();
+ // asclip.hide();
 
 });
 
