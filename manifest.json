@@ -11,6 +11,14 @@
     {
       "matches": ["https://nulab.backlog.jp/view/*"],
       "js": ["common-libs.js","view_issue.js"]
+    },
+    {
+      "matches": ["https://pad.nulab.co.jp/*"],
+      "js": ["common-libs.js","etherpad.js"]
+    },
+    {
+      "matches": ["https://backlogapp.uservoice.com/admin/forums/*"],
+      "js": ["common-libs.js","uservoice.js"]
     }
   ]
 }
